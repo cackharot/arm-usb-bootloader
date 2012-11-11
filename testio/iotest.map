@@ -1,0 +1,264 @@
+Archive member included because of file (symbol)
+
+c:/winarm/bin/../lib/gcc/arm-elf/4.1.1\libgcc.a(_udivsi3.o)
+                              printf.o (__udivsi3)
+c:/winarm/bin/../lib/gcc/arm-elf/4.1.1\libgcc.a(_umodsi3.o)
+                              printf.o (__umodsi3)
+c:/winarm/bin/../lib/gcc/arm-elf/4.1.1\libgcc.a(_dvmd_tls.o)
+                              c:/winarm/bin/../lib/gcc/arm-elf/4.1.1\libgcc.a(_udivsi3.o) (__div0)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+flash            0x00004000         0x0007c000
+ram_isp_low      0x40000120         0x000000df         a
+ram              0x40000200         0x00007f01
+ram_isp_high     0x4007ffe0         0x00000020         a
+ram_usb_dma      0x7fd00000         0x00002000
+CONFIG           0x0003a000         0x00001fff         rw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD crt0.o
+LOAD startup.o
+LOAD printf.o
+LOAD console.o
+LOAD sys.o
+LOAD main.o
+START GROUP
+LOAD c:/winarm/bin/../lib/gcc/arm-elf/4.1.1\libgcc.a
+LOAD c:/winarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib\libc.a
+END GROUP
+                0x40007edc                _stack_end = 0x40007edc
+                0x00004000                . = 0x4000
+
+startup
+ *(.startup)
+
+.text           0x00004000      0xc34
+ *(.text)
+ .text          0x00004000       0xf4 crt0.o
+                0x00004000                _startup
+                0x00004040                Reset_Handler
+ .text          0x000040f4      0x10c startup.o
+                0x0000411c                UNDEF_Routine
+                0x00004118                SWI_Routine
+                0x00004114                FIQ_Routine
+                0x0000419c                Reset
+                0x00004110                IRQ_Routine
+                0x00004120                Initialize
+ .text          0x00004200      0x438 printf.o
+                0x000045e4                printf
+                0x0000460c                sprintf
+ .text          0x00004638       0xd8 console.o
+                0x00004680                putchar
+                0x00004638                ConsoleInit
+                0x000046e4                puts
+                0x000046c4                getchar
+ .text          0x00004710      0x190 sys.o
+                0x0000479c                delay_ms_t1
+                0x00004758                delay_us_t0
+                0x00004848                restoreIRQ
+                0x00004710                delay_ms_t0
+                0x00004864                enableFIQ
+                0x00004874                disableFIQ
+                0x000047e4                delay_us_t1
+                0x00004828                enableIRQ
+                0x00004884                restoreFIQ
+                0x00004838                disableIRQ
+ .text          0x000048a0       0xf4 main.o
+                0x000048b8                main
+                0x000048a0                getPinState
+ .text          0x00004994      0x110 c:/winarm/bin/../lib/gcc/arm-elf/4.1.1\libgcc.a(_udivsi3.o)
+                0x00004994                __udivsi3
+                0x00004994                __aeabi_uidiv
+                0x00004a8c                __aeabi_uidivmod
+ .text          0x00004aa4       0xcc c:/winarm/bin/../lib/gcc/arm-elf/4.1.1\libgcc.a(_umodsi3.o)
+                0x00004aa4                __umodsi3
+ .text          0x00004b70        0x4 c:/winarm/bin/../lib/gcc/arm-elf/4.1.1\libgcc.a(_dvmd_tls.o)
+                0x00004b70                __aeabi_ldiv0
+                0x00004b70                __div0
+                0x00004b70                __aeabi_idiv0
+ *(.rodata)
+ *(.rodata*)
+ .rodata.str1.1
+                0x00004b74        0x7 printf.o
+ .rodata.str1.1
+                0x00004b7b       0xb7 main.o
+ *(.glue_7)
+ *fill*         0x00004c32        0x2 00
+ .glue_7        0x00004c34        0x0 crt0.o
+ .glue_7        0x00004c34        0x0 startup.o
+ .glue_7        0x00004c34        0x0 printf.o
+ .glue_7        0x00004c34        0x0 console.o
+ .glue_7        0x00004c34        0x0 sys.o
+ .glue_7        0x00004c34        0x0 main.o
+ .glue_7        0x00004c34        0x0 c:/winarm/bin/../lib/gcc/arm-elf/4.1.1\libgcc.a(_udivsi3.o)
+ .glue_7        0x00004c34        0x0 c:/winarm/bin/../lib/gcc/arm-elf/4.1.1\libgcc.a(_umodsi3.o)
+ .glue_7        0x00004c34        0x0 c:/winarm/bin/../lib/gcc/arm-elf/4.1.1\libgcc.a(_dvmd_tls.o)
+ *(.glue_7t)
+ .glue_7t       0x00004c34        0x0 crt0.o
+ .glue_7t       0x00004c34        0x0 startup.o
+ .glue_7t       0x00004c34        0x0 printf.o
+ .glue_7t       0x00004c34        0x0 console.o
+ .glue_7t       0x00004c34        0x0 sys.o
+ .glue_7t       0x00004c34        0x0 main.o
+ .glue_7t       0x00004c34        0x0 c:/winarm/bin/../lib/gcc/arm-elf/4.1.1\libgcc.a(_udivsi3.o)
+ .glue_7t       0x00004c34        0x0 c:/winarm/bin/../lib/gcc/arm-elf/4.1.1\libgcc.a(_umodsi3.o)
+ .glue_7t       0x00004c34        0x0 c:/winarm/bin/../lib/gcc/arm-elf/4.1.1\libgcc.a(_dvmd_tls.o)
+                0x00004c34                _etext = .
+                0x00004c34                . = ALIGN (0x4)
+
+.data           0x40000200        0x0 load address 0x00004c34
+                0x40000200                _data = .
+ *(.data)
+ .data          0x40000200        0x0 crt0.o
+ .data          0x40000200        0x0 startup.o
+ .data          0x40000200        0x0 printf.o
+ .data          0x40000200        0x0 console.o
+ .data          0x40000200        0x0 sys.o
+ .data          0x40000200        0x0 main.o
+ .data          0x40000200        0x0 c:/winarm/bin/../lib/gcc/arm-elf/4.1.1\libgcc.a(_udivsi3.o)
+ .data          0x40000200        0x0 c:/winarm/bin/../lib/gcc/arm-elf/4.1.1\libgcc.a(_umodsi3.o)
+ .data          0x40000200        0x0 c:/winarm/bin/../lib/gcc/arm-elf/4.1.1\libgcc.a(_dvmd_tls.o)
+                0x40000200                _edata = .
+                0x40000200                . = ALIGN (0x4)
+
+.bss            0x40000200        0x0
+                0x40000200                _bss_start = .
+ *(.bss)
+ .bss           0x40000200        0x0 crt0.o
+ .bss           0x40000200        0x0 startup.o
+ .bss           0x40000200        0x0 printf.o
+ .bss           0x40000200        0x0 console.o
+ .bss           0x40000200        0x0 sys.o
+ .bss           0x40000200        0x0 main.o
+ .bss           0x40000200        0x0 c:/winarm/bin/../lib/gcc/arm-elf/4.1.1\libgcc.a(_udivsi3.o)
+ .bss           0x40000200        0x0 c:/winarm/bin/../lib/gcc/arm-elf/4.1.1\libgcc.a(_umodsi3.o)
+ .bss           0x40000200        0x0 c:/winarm/bin/../lib/gcc/arm-elf/4.1.1\libgcc.a(_dvmd_tls.o)
+                0x40000200                . = ALIGN (0x4)
+                0x40000200                _bss_end = .
+                0x40000200                _end = .
+                0x40000200                end = .
+                0x40000200                _heap = .
+                0x40001200                . = (. + 0x1000)
+OUTPUT(iotest.elf elf32-littlearm)
+
+.ARM.attributes
+                0x00000000       0x10
+ .ARM.attributes
+                0x00000000       0x10 crt0.o
+ .ARM.attributes
+                0x00000010       0x10 startup.o
+ .ARM.attributes
+                0x00000020       0x10 printf.o
+ .ARM.attributes
+                0x00000030       0x10 console.o
+ .ARM.attributes
+                0x00000040       0x10 sys.o
+ .ARM.attributes
+                0x00000050       0x10 main.o
+
+.debug_abbrev   0x00000000      0x48d
+ .debug_abbrev  0x00000000       0x51 startup.o
+ .debug_abbrev  0x00000051      0x15e printf.o
+ .debug_abbrev  0x000001af       0xc7 console.o
+ .debug_abbrev  0x00000276      0x111 sys.o
+ .debug_abbrev  0x00000387       0xca main.o
+ .debug_abbrev  0x00000451       0x14 c:/winarm/bin/../lib/gcc/arm-elf/4.1.1\libgcc.a(_udivsi3.o)
+ .debug_abbrev  0x00000465       0x14 c:/winarm/bin/../lib/gcc/arm-elf/4.1.1\libgcc.a(_umodsi3.o)
+ .debug_abbrev  0x00000479       0x14 c:/winarm/bin/../lib/gcc/arm-elf/4.1.1\libgcc.a(_dvmd_tls.o)
+
+.debug_info     0x00000000      0xaca
+ .debug_info    0x00000000       0xb3 startup.o
+ .debug_info    0x000000b3      0x359 printf.o
+ .debug_info    0x0000040c       0xd3 console.o
+ .debug_info    0x000004df      0x390 sys.o
+ .debug_info    0x0000086f       0xff main.o
+ .debug_info    0x0000096e       0x74 c:/winarm/bin/../lib/gcc/arm-elf/4.1.1\libgcc.a(_udivsi3.o)
+ .debug_info    0x000009e2       0x74 c:/winarm/bin/../lib/gcc/arm-elf/4.1.1\libgcc.a(_umodsi3.o)
+ .debug_info    0x00000a56       0x74 c:/winarm/bin/../lib/gcc/arm-elf/4.1.1\libgcc.a(_dvmd_tls.o)
+
+.debug_line     0x00000000      0x549
+ .debug_line    0x00000000       0x74 startup.o
+ .debug_line    0x00000074      0x1a1 printf.o
+ .debug_line    0x00000215       0x67 console.o
+ .debug_line    0x0000027c       0xfa sys.o
+ .debug_line    0x00000376       0x72 main.o
+ .debug_line    0x000003e8       0x8c c:/winarm/bin/../lib/gcc/arm-elf/4.1.1\libgcc.a(_udivsi3.o)
+ .debug_line    0x00000474       0x75 c:/winarm/bin/../lib/gcc/arm-elf/4.1.1\libgcc.a(_umodsi3.o)
+ .debug_line    0x000004e9       0x60 c:/winarm/bin/../lib/gcc/arm-elf/4.1.1\libgcc.a(_dvmd_tls.o)
+
+.debug_loc      0x00000000      0x77b
+ .debug_loc     0x00000000       0x40 startup.o
+ .debug_loc     0x00000040      0x5d9 printf.o
+ .debug_loc     0x00000619       0x46 console.o
+ .debug_loc     0x0000065f       0x79 sys.o
+ .debug_loc     0x000006d8       0xa3 main.o
+
+.debug_pubnames
+                0x00000000      0x1ae
+ .debug_pubnames
+                0x00000000       0x6d startup.o
+ .debug_pubnames
+                0x0000006d       0x29 printf.o
+ .debug_pubnames
+                0x00000096       0x43 console.o
+ .debug_pubnames
+                0x000000d9       0xaa sys.o
+ .debug_pubnames
+                0x00000183       0x2b main.o
+
+.debug_aranges  0x00000000      0x100
+ .debug_aranges
+                0x00000000       0x20 startup.o
+ .debug_aranges
+                0x00000020       0x20 printf.o
+ .debug_aranges
+                0x00000040       0x20 console.o
+ .debug_aranges
+                0x00000060       0x20 sys.o
+ .debug_aranges
+                0x00000080       0x20 main.o
+ .debug_aranges
+                0x000000a0       0x20 c:/winarm/bin/../lib/gcc/arm-elf/4.1.1\libgcc.a(_udivsi3.o)
+ .debug_aranges
+                0x000000c0       0x20 c:/winarm/bin/../lib/gcc/arm-elf/4.1.1\libgcc.a(_umodsi3.o)
+ .debug_aranges
+                0x000000e0       0x20 c:/winarm/bin/../lib/gcc/arm-elf/4.1.1\libgcc.a(_dvmd_tls.o)
+
+.debug_str      0x00000000      0x24f
+ .debug_str     0x00000000       0x8d startup.o
+ .debug_str     0x0000008d       0x95 printf.o
+                                 0xf1 (size before relaxing)
+ .debug_str     0x00000122       0x34 console.o
+                                 0x74 (size before relaxing)
+ .debug_str     0x00000156       0x9f sys.o
+                                 0xff (size before relaxing)
+ .debug_str     0x000001f5       0x5a main.o
+                                 0xa2 (size before relaxing)
+
+.comment        0x00000000       0x11
+ .comment       0x00000000       0x11 startup.o
+                                 0x12 (size before relaxing)
+ .comment       0x00000000       0x12 printf.o
+ .comment       0x00000000       0x12 console.o
+ .comment       0x00000000       0x12 sys.o
+ .comment       0x00000000       0x12 main.o
+
+.debug_frame    0x00000000      0x308
+ .debug_frame   0x00000000       0x94 startup.o
+ .debug_frame   0x00000094       0xe4 printf.o
+ .debug_frame   0x00000178       0x58 console.o
+ .debug_frame   0x000001d0       0xb0 sys.o
+ .debug_frame   0x00000280       0x38 main.o
+ .debug_frame   0x000002b8       0x28 c:/winarm/bin/../lib/gcc/arm-elf/4.1.1\libgcc.a(_udivsi3.o)
+ .debug_frame   0x000002e0       0x28 c:/winarm/bin/../lib/gcc/arm-elf/4.1.1\libgcc.a(_umodsi3.o)
+
+.debug_pubtypes
+                0x00000000       0x43
+ .debug_pubtypes
+                0x00000000       0x31 printf.o
+ .debug_pubtypes
+                0x00000031       0x12 main.o

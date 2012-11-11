@@ -1,0 +1,4 @@
+startup.o: startup.c startup.h LPC214x.h
+printf.o: printf.c console.h
+console.o: console.c console.h
+sys.o: sys.c LPC214x.h sys.h

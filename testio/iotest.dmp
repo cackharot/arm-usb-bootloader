@@ -1,0 +1,128 @@
+
+iotest.elf:     file format elf32-littlearm
+iotest.elf
+architecture: arm, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x00004000
+
+Program Header:
+    LOAD off    0x00000000 vaddr 0x00000000 paddr 0x00000000 align 2**15
+         filesz 0x00004c34 memsz 0x00004c34 flags r-x
+private flags = 2: [APCS-32] [FPA float format] [has entry point]
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000c34  00004000  00004000  00004000  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .ARM.attributes 00000010  00000000  00000000  00004c34  2**0
+                  CONTENTS, READONLY
+  2 .debug_abbrev 0000048d  00000000  00000000  00004c44  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  3 .debug_info   00000aca  00000000  00000000  000050d1  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_line   00000549  00000000  00000000  00005b9b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_loc    0000077b  00000000  00000000  000060e4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_pubnames 000001ae  00000000  00000000  0000685f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_aranges 00000100  00000000  00000000  00006a10  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_str    0000024f  00000000  00000000  00006b10  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .comment      00000011  00000000  00000000  00006d5f  2**0
+                  CONTENTS, READONLY
+ 10 .debug_frame  00000308  00000000  00000000  00006d70  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_pubtypes 00000043  00000000  00000000  00007078  2**0
+                  CONTENTS, READONLY, DEBUGGING
+SYMBOL TABLE:
+00004000 l    d  .text	00000000 .text
+00000000 l    d  .ARM.attributes	00000000 .ARM.attributes
+00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
+00000000 l    d  .debug_info	00000000 .debug_info
+00000000 l    d  .debug_line	00000000 .debug_line
+00000000 l    d  .debug_loc	00000000 .debug_loc
+00000000 l    d  .debug_pubnames	00000000 .debug_pubnames
+00000000 l    d  .debug_aranges	00000000 .debug_aranges
+00000000 l    d  .debug_str	00000000 .debug_str
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  .debug_frame	00000000 .debug_frame
+00000000 l    d  .debug_pubtypes	00000000 .debug_pubtypes
+00000080 l       *ABS*	00000000 UND_STACK_SIZE
+00000080 l       *ABS*	00000000 ABT_STACK_SIZE
+00000080 l       *ABS*	00000000 FIQ_STACK_SIZE
+00000080 l       *ABS*	00000000 IRQ_STACK_SIZE
+00000080 l       *ABS*	00000000 SVC_STACK_SIZE
+00000010 l       *ABS*	00000000 MODE_USR
+00000011 l       *ABS*	00000000 MODE_FIQ
+00000012 l       *ABS*	00000000 MODE_IRQ
+00000013 l       *ABS*	00000000 MODE_SVC
+00000017 l       *ABS*	00000000 MODE_ABT
+0000001b l       *ABS*	00000000 MODE_UND
+0000001f l       *ABS*	00000000 MODE_SYS
+00000080 l       *ABS*	00000000 I_BIT
+00000040 l       *ABS*	00000000 F_BIT
+00004000 l       .text	00000000 _vectors
+00004020 l       .text	00000000 Reset_Addr
+00004024 l       .text	00000000 Undef_Addr
+00004028 l       .text	00000000 SWI_Addr
+0000402c l       .text	00000000 PAbt_Addr
+00004030 l       .text	00000000 DAbt_Addr
+00004034 l       .text	00000000 IRQ_Addr
+00004038 l       .text	00000000 FIQ_Addr
+000040c0 l       .text	00000000 IRQ_Handler
+00000000 l    df *ABS*	00000000 startup.c
+000040f4 l     F .text	0000001c feed
+00000000 l    df *ABS*	00000000 printf.c
+00004200 l     F .text	00000028 printchar
+00004228 l     F .text	000000bc prints
+000042e4 l     F .text	0000011c printi
+00004400 l     F .text	000001e4 print
+00000000 l    df *ABS*	00000000 console.c
+00000000 l    df *ABS*	00000000 sys.c
+00000000 l    df *ABS*	00000000 main.c
+00004680 g     F .text	00000044 putchar
+000045e4 g     F .text	00000028 printf
+00004638 g     F .text	00000048 ConsoleInit
+0000479c g     F .text	00000048 delay_ms_t1
+0000411c g     F .text	00000004 UNDEF_Routine
+00004c34 g       .text	00000000 _etext
+00004758 g     F .text	00000044 delay_us_t0
+00004848 g     F .text	0000001c restoreIRQ
+00004710 g     F .text	00000048 delay_ms_t0
+000046e4 g     F .text	0000002c puts
+00004994 g     F .text	000000f8 __udivsi3
+00004864 g     F .text	00000010 enableFIQ
+40000200 g       *ABS*	00000000 _bss_start
+00004118 g     F .text	00000004 SWI_Routine
+00004000 g       .text	00000000 _startup
+00004c34 g       *ABS*	00000000 _bss_end
+00004040 g       .text	00000000 Reset_Handler
+00004874 g     F .text	00000010 disableFIQ
+00004114 g     F .text	00000004 FIQ_Routine
+00004aa4 g     F .text	000000cc __umodsi3
+00004c34 g       *ABS*	00000000 end
+0000419c g     F .text	00000064 Reset
+00004b70 g     F .text	00000004 __aeabi_ldiv0
+000047e4 g     F .text	00000044 delay_us_t1
+000048b8 g     F .text	000000dc main
+00004b70 g     F .text	00000004 __div0
+00004994 g     F .text	00000000 __aeabi_uidiv
+000046c4 g     F .text	00000020 getchar
+40007edc g       *ABS*	00000000 _stack_end
+0000460c g     F .text	0000002c sprintf
+00004110 g     F .text	00000004 IRQ_Routine
+000048a0 g     F .text	00000018 getPinState
+40000200 g       *ABS*	00000000 _data
+00004828 g     F .text	00000010 enableIRQ
+00004884 g     F .text	0000001c restoreFIQ
+00004a8c g     F .text	00000018 __aeabi_uidivmod
+40000200 g       *ABS*	00000000 _edata
+00004c34 g       *ABS*	00000000 _end
+00004c34 g       *ABS*	00000000 _heap
+00004b70 g     F .text	00000004 __aeabi_idiv0
+00004838 g     F .text	00000010 disableIRQ
+00004120 g     F .text	0000007c Initialize
+
+
